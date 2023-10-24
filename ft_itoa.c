@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:21:03 by valvarad          #+#    #+#             */
-/*   Updated: 2023/10/24 16:25:30 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:34:00 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_itoa(int n)
 	}
 	digitos = contar_digitos(n);
 	ret = (char *)malloc(sizeof(char) * (digitos + 1));
+	if (!ret)
+		return (NULL);
 	if (n < 0)
 	{	
 		n *= -1;
