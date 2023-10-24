@@ -1,5 +1,5 @@
 # Libft
 Libreria que contiene funciones auxiliares.
 
-#Como usar
+# Como usar
 Escribir en la terminal "Make".
