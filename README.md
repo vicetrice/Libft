@@ -2,4 +2,7 @@
 Libreria que contiene funciones auxiliares.
 
 # Como usar
-Escribir en la terminal "Make".
+Escribir en la terminal 
+```
+Make
+```
