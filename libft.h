@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:44:31 by valvarad          #+#    #+#             */
-/*   Updated: 2023/10/04 16:48:48 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:45:49 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char				*ft_strdup(const char *src);
 char				*ft_itoa(int n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-char				*ft_strmapi(char *s, char (*f)(unsigned int, char));
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 typedef struct s_list
 {
 	void			*content;
