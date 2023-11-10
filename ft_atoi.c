@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 17:12:51 by valvarad          #+#    #+#             */
-/*   Updated: 2023/09/19 18:51:45 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:48:05 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int	is_numeric(char c)
 int	is_space(char c)
 {
 	int	f;
+	int	v;
 
+	v = (c == '\v');
 	f = (c == '\f');
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' || c == '\v' || f);
+	return (c == ' ' || c == '\n' || c == '\t' || c == '\r' || v || f);
 }
 
 int	ft_atoi(const char *str)

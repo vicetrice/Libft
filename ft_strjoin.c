@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:18:35 by valvarad          #+#    #+#             */
-/*   Updated: 2023/10/04 17:41:12 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:50:29 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	leng = 0;
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (res != NULL)
-	{		
+	{
 		while (cont < ft_strlen(s1))
 		{
 			res[leng++] = s1[cont++];

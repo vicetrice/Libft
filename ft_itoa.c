@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:21:03 by valvarad          #+#    #+#             */
-/*   Updated: 2023/10/24 16:34:00 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:48:58 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	almacenar(char *devuelta, int b, int tam)
 
 	i = 0;
 	while (b > 0)
-	{	
+	{
 		devuelta[tam - i] = ((b % 10) + '0');
 		b /= 10;
 		i++;
@@ -53,7 +53,7 @@ void	almacenar(char *devuelta, int b, int tam)
 }
 
 char	*ft_itoa(int n)
-{	
+{
 	char	*ret;
 	int		digitos;
 
@@ -66,10 +66,10 @@ char	*ft_itoa(int n)
 	if (!ret)
 		return (NULL);
 	if (n < 0)
-	{	
+	{
 		n *= -1;
 		ret[0] = '-';
-	}	
+	}
 	else if (n == 0)
 	{
 		ret[0] = '0';
