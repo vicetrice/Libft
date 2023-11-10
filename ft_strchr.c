@@ -6,7 +6,7 @@
 /*   By: valvarad <valvarad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:45:16 by valvarad          #+#    #+#             */
-/*   Updated: 2023/09/19 18:25:21 by valvarad         ###   ########.fr       */
+/*   Updated: 2023/11/10 10:51:43 by valvarad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	cont = 0;
 	while (s[cont])
 	{
-		if (s[cont] == c)
+		if (s[cont] == (unsigned char)c)
 			return ((char *)&s[cont]);
 		cont++;
 	}
-	if (c == 0)
+	if ((unsigned char)c == 0)
 		return ((char *)&s[cont]);
 	return (NULL);
 }
