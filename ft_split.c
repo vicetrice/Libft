@@ -48,7 +48,7 @@ size_t	str_len(char const *stri, char del)
 	return (o);
 }
 
-void	ft_free(char **str)
+void	list_free(char **str)
 {
 	size_t	l;
 
@@ -75,19 +75,16 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		if (s[i] == c && (s[i + 1] != c && s[i + 1] != '\0'))
+		if (s[i] != c && (!i || s[i - 1] == c))
 		{
-			i++;
-			str_list[wc] = ft_substr(s , i, str_len(s + i, c));
+			str_list[wc] = ft_substr(s, i, str_len(s + i, c));
 			if (!(str_list[wc]))
 			{
-				ft_free(str_list);
+				list_free(str_list);
 				return (NULL);
 			}
 			wc++;
 		}
-		else if(s[i] != c && !i)
-			str_list[wc++] = ft_substr(s , i, str_len(s + i, c));
 		i++;
 	}
 	str_list[wc] = NULL;
