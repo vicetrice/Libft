@@ -35,25 +35,23 @@ int	count_words(char const *str, char a)
 	return (res);
 }
 
-char	*recortar(char const *stri, char del)
+size_t	str_len(char const *stri, char del)
 {
-	int		o;
-	char	*palabra;
+	size_t		o;
 
 	o = 0;
 	while (stri[o] != del && stri[o])
 	{
 		o++;
 	}
-	palabra = (char *)malloc(sizeof(char) * (o + 1));
-	o = 0;
-	while (stri[o] != del && stri[o])
-	{
-		palabra[o] = stri[o];
-		o++;
-	}
-	palabra[o] = '\0';
-	return (palabra);
+	return (o);
+}
+
+static void	ft_free(char **str, int str_ind)
+{
+	while (str_ind-- > 0)
+		free(str[str_ind]);
+	free(str);
 }
 
 char	**ft_split(char const *s, char c)
@@ -70,13 +68,18 @@ char	**ft_split(char const *s, char c)
 	while (s[i] == c && s[i])
 		i++;
 	if (s[i])
-		str_list[wc++] = recortar(s + i, c);
+		str_list[wc++] = ft_substr(s ,i, str_len(s + i, c));
 	while (s[i])
 	{
 		if (s[i] == c && (s[i + 1] != c && s[i + 1] != '\0'))
 		{
 			i++;
-			str_list[wc] = recortar(s + i, c);
+			str_list[wc] = ft_substr(s , i, str_len(s + i, c));
+			if (!(str_list[wc]))
+			{
+				ft_free(str_list, wc);
+				return (NULL);
+			}
 			wc++;
 		}
 		i++;
