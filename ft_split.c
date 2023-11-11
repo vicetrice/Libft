@@ -47,10 +47,17 @@ size_t	str_len(char const *stri, char del)
 	return (o);
 }
 
-static void	ft_free(char **str, int str_ind)
+static void	ft_free(char **str)
 {
-	while (str_ind-- > 0)
-		free(str[str_ind]);
+	size_t	l;
+
+	l = 0;
+	while (str[l])
+	{
+		free(str[l]);
+		l++;
+	}
+	free(str[l]);
 	free(str);
 }
 
@@ -77,12 +84,12 @@ char	**ft_split(char const *s, char c)
 			str_list[wc] = ft_substr(s , i, str_len(s + i, c));
 			if (!(str_list[wc]))
 			{
-				ft_free(str_list, wc);
+				ft_free(str_list);
 				return (NULL);
 			}
 			wc++;
 		}
-		i++;
+		i ++;
 	}
 	str_list[wc] = NULL;
 	return (str_list);
